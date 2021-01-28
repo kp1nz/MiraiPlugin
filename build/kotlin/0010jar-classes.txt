@@ -1,0 +1,1 @@
+/Users/kp1nz/IdeaProjects/MiraiTemplate/build/classes/java/main/com/example/plugin/Template.class
