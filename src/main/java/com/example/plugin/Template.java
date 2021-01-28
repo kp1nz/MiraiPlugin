@@ -35,31 +35,6 @@ public class Template extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        GlobalEventChannel.INSTANCE.subscribeAlways(NewFriendRequestEvent.class, NewFriendRequestEvent::accept);
-        GlobalEventChannel.INSTANCE.subscribeAlways(FriendAddEvent.class, (FriendAddEvent event) ->
-                event.getFriend().sendMessage("🐱"));
-        GlobalEventChannel.INSTANCE.subscribeAlways(FriendMessageEvent.class, (FriendMessageEvent event) -> {
-            //redirect message
-            Group group = Bot.getInstance(3634917467L).getGroup(1063117299);
-            event.getMessage().stream().filter(message -> message instanceof PttMessage).forEach(mes->
-                    group.sendMessage(mes));
-            group.sendMessage(event.getMessage());
-            event.getSender().sendMessage("喵");
 
-        });
-//            event.getMessage().stream().filter(message -> message instanceof Image).forEach(mes->
-//                    Bot.getInstance(3634917467L).getGroup(1063117299).sendMessage(mes));
-//            event.getSender().sendMessage(event.getMessage());
-//            StringBuilder sb = new StringBuilder();
-//            event.getMessage().stream().filter(message -> message instanceof PlainText).forEach(mes->
-//                    sb.append(mes));
-//        GlobalEventChannel.INSTANCE.subscribeAlways(GroupMessageEvent.class, (GroupMessageEvent event) -> {
-//            event.getSender().nudge().sendTo(event.getSender());
-//            if (event.getSender().getId() == 815153150) {
-//                event.getSender().sendMessage("kp1nz!");
-//            } else {
-//                event.getSender().sendMessage("喵🐱");
-//            }
-//        });
     }
 }
